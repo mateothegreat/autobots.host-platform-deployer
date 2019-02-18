@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $APP
+  labels:
+    app: $APP
+spec:
+  selector:
+    matchLabels:
+      app: $APP
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: $APP
+    spec:
+      nodeSelector:
+        role: bots
+      containers:
+        - image: $IMAGE
+          name: $APP
+          resources:
+            requests:
+              cpu: "5m"
+              memory: 5Mi
+          env:
+            - name: $ENV_1_NAME
+              value: $ENV_1_VALUE

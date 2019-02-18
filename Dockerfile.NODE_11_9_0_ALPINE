@@ -1,0 +1,20 @@
+FROM node:11.9.0-alpine
+
+ARG REPO_URL
+
+RUN apk add --update git
+
+RUN adduser -S user     && \
+    mkdir /app          && \
+    chown -R user /app
+
+USER user
+WORKDIR /app
+
+RUN git clone $REPO_URL /app
+
+COPY .env .env
+
+RUN npm install
+
+ENTRYPOINT [ "npm", "run", "start" ]
