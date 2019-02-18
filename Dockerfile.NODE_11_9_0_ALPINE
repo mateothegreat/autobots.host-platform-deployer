@@ -13,8 +13,6 @@ WORKDIR /app
 
 RUN git clone $REPO_URL /app
 
-COPY .env .env
-
 RUN npm install
 
 ENTRYPOINT [ "npm", "run", "start" ]
