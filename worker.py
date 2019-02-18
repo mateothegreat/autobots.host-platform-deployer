@@ -5,7 +5,7 @@ import time
 
 import pika
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq'))
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq.default.svc.cluster.local'))
 channel = connection.channel()
 
 print(' [*] Waiting for messages. To exit press CTRL+C')
