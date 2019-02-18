@@ -24,5 +24,15 @@ spec:
               cpu: "5m"
               memory: 5Mi
           env:
-            - name: $ENV_1_NAME
-              value: $ENV_1_VALUE
+            - name: "VERSION"
+              value: "$VERSION"
+            - name: "$ENV_1_NAME"
+              value: "$ENV_1_VALUE"
+            - name: "$ENV_2_NAME"
+              value: "$ENV_2_VALUE"
+            - name: "$ENV_3_NAME"
+              value: "$ENV_3_VALUE"
+            - name: "$ENV_4_NAME"
+              value: "$ENV_4_VALUE"
+            - name: "$ENV_5_NAME"
+              value: "$ENV_5_VALUE"
